@@ -3,11 +3,14 @@
   padding: 0;
   margin: 0;
 }
+
 .mes__menu {
   width: 370px;
   height: 500px;
   background: #000;
+  display: block;
 }
+
 .mes__menu_header {
   display: flex;
   justify-content: space-between;
@@ -57,8 +60,7 @@
   cursor: pointer;
   font-size: 16px;
 }
-.menu__btn {
-  width: 46px;
-  height: 46px;
-  position: relative;
+.mes__menu_container p {
+  color: #fff;
+  margin: 16px 0;
 }
