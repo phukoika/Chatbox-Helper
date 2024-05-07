@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     btn: document.getElementById("send"),
   };
 
-  btn.addEventListener("click", () => {
+  dom.btn.addEventListener("click", () => {
     if (dom.frame) {
       if (state === 1) {
         dom.frame.style.width = "75px";
