@@ -9,5 +9,6 @@ document.addEventListener("DOMContentLoaded", (e) => {
     if (dom.frame) {
       dom.title.innerText = "hello world";
     }
+    console.log(123);
   });
 });
