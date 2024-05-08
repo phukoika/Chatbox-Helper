@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", (e) => {
     widgetDefaultClose: document.querySelector(".widget-close"),
     widgetIconClose: document.querySelector(".widget-icon-close"),
     widgetContainer: document.querySelector(".widget-container"),
+    widgetMenu: document.querySelector(".widget-menu"),
+    widgetMenuChat: document.querySelector(".menu-chat"),
+    widgetMenuCall: document.querySelector(".menu-call"),
+    widgetChat: document.querySelector(".widget-chat"),
+    widgetPhone: document.querySelector(".widget-phone"),
+    widgetSubmitBtn: document.querySelector(".btn-primary"),
+    widgetCancelBtn: document.querySelector(".btn-cancel"),
   };
 
   const setWidgetFormSize = function (state) {
@@ -64,4 +71,22 @@ document.addEventListener("DOMContentLoaded", (e) => {
       dom.widgetContent.style.height = "75px";
     }
   });
+
+  // show menu chat
+  dom.widgetChat.addEventListener("click", () => {
+    dom.widgetMenu.classList.add("hidden");
+    dom.widgetMenuChat.classList.add("active");
+    console.log(dom.widgetCancelBtn);
+  });
+  // close menu chat
+  dom.widgetCancelBtn.addEventListener("click", () => {
+    dom.widgetMenu.classList.remove("hidden");
+    dom.widgetMenuChat.classList.remove("active");
+  });
+  //show menu call
+  dom.widgetPhone.addEventListener("click", () => {
+    dom.widgetMenu.classList.add("hidden");
+    dom.widgetMenuCall.classList.add("active");
+  });
+  // close menu call
 });

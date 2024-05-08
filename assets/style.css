@@ -76,9 +76,16 @@
   cursor: pointer;
   color: #fff;
 }
+.widget-container {
+  background-color: #fff;
+}
 
 .widget-menu {
   list-style: none;
+  /* display: none; */
+}
+.widget-menu.hidden {
+  display: none;
 }
 .widget-menu li {
   padding: 16px;
@@ -140,4 +147,60 @@
 }
 .widget-icon.effect-close {
   animation: zoomIn2 linear 0.3s;
+}
+
+/* MENU CHAT */
+.menu-chat {
+  padding: 10px;
+  display: none;
+}
+.menu-call {
+  padding: 10px;
+  display: none;
+}
+.menu-chat.active,
+.menu-call.active {
+  display: block;
+}
+.email-input input {
+  width: 100%;
+  padding: 12px 0 12px 12px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid #ccc;
+}
+.menu-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  margin-bottom: 8px;
+}
+.menu-heading-icon svg {
+  width: 24px;
+  height: 24px;
+}
+.menu-heading-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+.button-submit {
+  margin: 8px 0;
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.btn.btn-primary {
+  background-color: #009e60;
+  color: #fff;
+}
+.btn.btn-cancel {
+  background-color: #ccc;
 }
