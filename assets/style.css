@@ -3,17 +3,141 @@
   padding: 0;
   margin: 0;
 }
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes zoomIn2 {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.31, 0.31, 0.31);
+    transform: scale3d(0.31, 0.31, 0.31);
+  }
 
-.chatbox {
-  width: 500px;
-  height: 300px;
-  background: green;
-  text-align: center;
-  color: #fff;
-  font-size: 24px;
+  50% {
+    opacity: 1;
+  }
 }
 
-.button #send {
-  padding: 6px 12px;
+#widget-chatbox {
+  font-family: "Poppins", sans-serif;
+}
+
+.widget-content {
+  width: 340px;
+  background: #fff;
+  box-shadow: 0 20px 25px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 85px;
+  right: 15px;
   border-radius: 8px;
+  overflow: hidden;
+  display: none;
+  animation: popIn linear 0.3s;
+  transform-origin: right bottom;
+}
+.widget-content.active {
+  display: block;
+}
+.widget-content .widget-header {
+  background: #009e60;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.widget-content .widget-header .widget-header-title {
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+}
+.widget-header .widget-header-img img {
+  width: 100px;
+}
+.widget-header .widget-icon-close {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.widget-menu {
+  list-style: none;
+}
+.widget-menu li {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+.widget-menu li:last-child {
+  border: none;
+}
+.widget-menu li:hover span {
+  color: #009e60;
+}
+.widget-menu .widget-chat-icon,
+.widget-menu .widget-phone-icon {
+  width: 24px;
+  height: 24px;
+}
+.widget-chat-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+.widget-icon {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  background: #009e60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.widget-icon .widget-default svg,
+.widget-icon .widget-close svg {
+  width: 36px;
+  height: 36px;
+}
+
+.widget-icon .widget-close {
+  display: none;
+}
+.widget-default.hidden {
+  display: none;
+}
+.widget-close.hidden {
+  display: none;
+}
+.widget-close.active {
+  display: block !important;
+}
+.widget-icon.effect-open {
+  animation: zoomIn linear 0.3s;
+}
+.widget-icon.effect-close {
+  animation: zoomIn2 linear 0.3s;
 }
